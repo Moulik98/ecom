@@ -1,0 +1,282 @@
+body {
+  background: radial-gradient(indigo, rgba(163, 0, 130, 1));
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  justify-self: center;
+  text-align: center;
+}
+
+#landingPage {
+  color: silver;
+  text-shadow: 1px 1px 1px black;
+}
+
+#landingPage:hover {
+  color: dodgerblue;
+}
+
+#loadingSpinner {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* auth forms */
+
+#authHeader {
+  color: silver;
+  font-size: 5em;
+  text-shadow: 2px 2px 2px black;
+}
+
+#authHeader:hover {
+  color: dodgerblue;
+}
+
+.authForm {
+  place-self: center;
+  text-align: left;
+}
+
+#loginFormContainer,
+#registrationFormContainer {
+  font-size: 1vmin;
+  margin-bottom: 10em;
+}
+
+#loginForm,
+#registrationForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#loginForm label,
+#registrationForm label {
+  align-items: flex-start;
+  display: block;
+}
+
+#loginForm input,
+#registrationForm input {
+  align-items: flex-end;
+  background-color: silver;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 1.75em;
+  width: 50vw;
+}
+
+#loginForm input:hover,
+#registrationForm input:hover {
+  background-color: dodgerblue;
+  color: silver;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputContainer input {
+  border: 2px solid indigo;
+  color: indigo;
+  outline: none;
+  padding: 20px;
+  width: 100%;
+}
+
+.inputContainer input:focus + label {
+  border-color: transparent !important;
+  color: indigo;
+  font-size: 1rem;
+  left: 10px;
+  top: -10px;
+}
+
+input:not(:placeholder-shown) ~ label {
+  font-size: 1rem;
+  transform: translateY(-0.5rem);
+}
+
+.inputContainer label {
+  color: indigo;
+  left: 15px;
+  pointer-events: none;
+  position: absolute;
+  top: 10px;
+  transition: all 0.2s ease-out;
+}
+
+.inputContainer:hover label {
+  color: silver;
+}
+
+.formButton {
+  align-items: center;
+  background-color: silver;
+  border: 2px solid indigo;
+  border-radius: 10px;
+  color: indigo;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.5em;
+  height: 2em;
+  justify-content: center;
+  margin: auto;
+  width: 15%;
+}
+
+.formButton:hover {
+  background-color: dodgerblue;
+  color: silver;
+}
+
+/* navbar */
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  align-items: center;
+  background: radial-gradient(dodgerblue, rgba(75, 0, 130, 1));
+  display: flex;
+  justify-content: space-between;
+  min-height: 4rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.navbarLogo {
+  padding-left: 1em;
+}
+
+#navbarLogo {
+  border: 4px solid silver;
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+}
+
+#navbarLogo:hover {
+  border: 4px solid dodgerblue;
+}
+
+.navMenu {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: space-evenly;
+  padding-right: 2rem;
+}
+
+.navLink {
+  color: silver;
+  font-size: 1.75em;
+  transition: 0.3s ease-out;
+}
+
+.navLink:hover {
+  color: dodgerblue;
+}
+
+.navBurger {
+  cursor: pointer;
+  display: none;
+  padding-right: 1.5em;
+}
+
+.barGroup:hover .bar {
+  background-color: dodgerblue;
+}
+
+.bar {
+  background-color: silver;
+  display: block;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease;
+  width: 25px;
+  -webkit-transition: all 0.3s ease;
+}
+
+#navbarEnd {
+  align-items: center;
+  padding-right: 2rem;
+}
+
+#navbarStart {
+  align-items: center;
+  display: flex;
+  padding-left: 1rem;
+}
+
+#darkModeToggleButton {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    left: 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .navBurger {
+    display: block;
+  }
+
+  .navBurger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .navBurger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .navBurger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navMenu {
+    background: radial-gradient(dodgerblue, rgba(75, 0, 130, 1));
+    flex-direction: column;
+    gap: 0;
+    left: -120%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    position: fixed;
+    text-align: center;
+    top: 3rem;
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  .navItem {
+    margin: 0.5rem 0;
+  }
+
+  .navMenu.active {
+    left: -5%;
+  }
+
+  .barGroup {
+    padding-left: 1rem;
+  }
+
+  .formButton {
+    border-radius: 5px;
+  }
+}
